@@ -748,7 +748,17 @@ html[dir="rtl"] .scene-c .scene-img {
   .scene-img > img { max-height: 42vh; }
   .booking-card { margin: 0 auto; }
 
-  /* On mobile: scene-b image column stacks doctor above chips */
+  /* On mobile: all scenes visible and stacked, not overlapping */
+  .hero-stage {
+    height: auto;
+  }
+  .scene {
+    position: relative;
+    opacity: 1 !important;
+    transform: none !important;
+    inset: auto;
+  }
+  /* Scene-b image column stacks doctor above chips */
   .scene-b .scene-img {
     flex-direction: column;
     height: auto;
