@@ -28,10 +28,17 @@
     gsap.set(sceneC, { opacity: 0, y: 40 });
     gsap.set('.orbit-label', { opacity: 0, scale: 0.7 });
 
-    // Scene A fades in immediately on load
+    // Scene A fades in on load; fades back in when scrolling back to top
     gsap.to(sceneA, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', delay: 0.2 });
 
-    // Scene B fades in when scrolled into view
+    ScrollTrigger.create({
+      trigger: sceneA,
+      start: 'bottom 20%',        // when scene A bottom leaves top area (scrolled away)
+      onLeave:     () => gsap.to(sceneA, { opacity: 0, y: -30, duration: 0.5, ease: 'power2.in' }),
+      onEnterBack: () => gsap.to(sceneA, { opacity: 1, y: 0,   duration: 0.6, ease: 'power2.out' }),
+    });
+
+    // Scene B fades in when scrolled into view, fades out when scrolling back up
     ScrollTrigger.create({
       trigger: sceneB,
       start: 'top 80%',
@@ -41,14 +48,19 @@
           opacity: 1, scale: 1, duration: 0.5,
           stagger: 0.06, ease: 'back.out(1.4)', delay: 0.3
         });
-      }
+      },
+      onLeaveBack: () => {
+        gsap.to(sceneB, { opacity: 0, y: 40, duration: 0.5, ease: 'power2.in' });
+        gsap.to('.orbit-label', { opacity: 0, scale: 0.7, duration: 0.35, stagger: 0.04 });
+      },
     });
 
-    // Scene C fades in when scrolled into view
+    // Scene C fades in when scrolled into view, fades out when scrolling back up
     ScrollTrigger.create({
       trigger: sceneC,
       start: 'top 80%',
-      onEnter: () => gsap.to(sceneC, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' })
+      onEnter:     () => gsap.to(sceneC, { opacity: 1, y: 0,  duration: 0.7, ease: 'power2.out' }),
+      onLeaveBack: () => gsap.to(sceneC, { opacity: 0, y: 40, duration: 0.5, ease: 'power2.in' }),
     });
 
   } else {
