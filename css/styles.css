@@ -756,29 +756,32 @@ html[dir="rtl"] .scene-c .scene-img {
     position: relative;
     inset: auto;
   }
-  /* Scene-b image column stacks doctor above chips */
+  /* Scene-b: give image area a fixed height so orbit can fill it */
   .scene-b .scene-img {
-    flex-direction: column;
-    height: auto;
+    height: 56vh;
+    min-height: 340px;
   }
-  /* Orbit becomes a flowing flex-wrap row of chips below the doctor */
+  /* Orbit stays absolute, filling the image area */
   .orbit {
-    position: static;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 8px 4px;
-    width: 100%;
+    position: absolute;
+    inset: 0;
   }
+  /* Smaller labels on mobile, still floating around doctor */
   .orbit-label {
-    position: static;
-    min-width: unset;
-    max-width: unset;
-    font-size: 0.78rem;
-    padding: 8px 12px;
-    animation: floatLabel 3s ease-in-out infinite alternate;
+    min-width: 80px;
+    max-width: 110px;
+    font-size: 0.7rem;
+    padding: 7px 10px;
   }
+  /* Tighten positions so labels don't overflow narrow screens */
+  .orbit-label.i1 { top: 4%;   left: 2%; }
+  .orbit-label.i2 { top: 0%;   right: 2%; }
+  .orbit-label.i3 { top: 32%;  left: -1%; }
+  .orbit-label.i4 { top: 28%;  right: -1%; }
+  .orbit-label.i5 { bottom: 26%; left: 1%; }
+  .orbit-label.i6 { bottom: 20%; right: 0%; }
+  .orbit-label.i7 { bottom: 2%;  left: 10%; }
+  .orbit-label.i8 { bottom: 0%;  right: 10%; }
   .section { padding: 70px 0; }
 
   /* Mobile: hide inline buttons, show hamburger */
