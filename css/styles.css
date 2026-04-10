@@ -748,14 +748,20 @@ html[dir="rtl"] .scene-c .scene-img {
   .scene-img > img { max-height: 42vh; }
   .booking-card { margin: 0 auto; }
 
-  /* On mobile: orbit becomes a flowing flex-wrap row of chips */
+  /* On mobile: scene-b image column stacks doctor above chips */
+  .scene-b .scene-img {
+    flex-direction: column;
+    height: auto;
+  }
+  /* Orbit becomes a flowing flex-wrap row of chips below the doctor */
   .orbit {
     position: static;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
-    padding: 12px 8px 0;
+    padding: 12px 8px 4px;
+    width: 100%;
   }
   .orbit-label {
     position: static;
