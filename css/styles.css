@@ -238,15 +238,19 @@ p  { margin: 0 0 1em; color: var(--ink-soft); }
 .mobile-menu .dropdown-trigger {
   width: 100%;
   justify-content: center;
+  text-align: center;
   position: relative;
 }
 .mobile-menu .dropdown-trigger::after {
   position: absolute;
-  right: 16px;
+  inset-inline-end: 16px; /* right in LTR, left in RTL */
 }
 
-.mobile-menu .visit-clinic-btn {
+.mobile-menu .btn {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
