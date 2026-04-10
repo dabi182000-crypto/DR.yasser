@@ -747,6 +747,20 @@ html[dir="rtl"] .scene-c .scene-img {
   .scene-img > img { max-height: 42vh; }
   .booking-card { margin: 0 auto; }
 
+  /* Fade out the bottom crop on Scene A & B doctor images */
+  .scene-a .scene-img::after,
+  .scene-b .scene-img::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--cream));
+    z-index: 4;
+    pointer-events: none;
+  }
+
   /* On mobile: scenes stack vertically (GSAP handles opacity/transform) */
   .hero { overflow: visible; }
 
