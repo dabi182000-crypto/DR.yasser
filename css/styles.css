@@ -752,8 +752,8 @@ html[dir="rtl"] .scene-c .scene-img {
 
   /* Fade the image pixels directly — no color-mismatch possible */
   .scene-a .scene-img > img {
-    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
   }
 
   /* On mobile: scenes stack vertically (GSAP handles opacity/transform) */
