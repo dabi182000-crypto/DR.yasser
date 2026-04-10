@@ -813,6 +813,24 @@ html[dir="rtl"] .scene-c .scene-img {
   .orbit-label.i8 { bottom: 0%;  right: 10%; }
   .section { padding: 70px 0; }
 
+  /* Contact section: stack label + value vertically on mobile */
+  .info-list li {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .info-list li strong {
+    font-size: 0.85rem;
+  }
+  .info-list li a,
+  .info-list li span,
+  .info-list li div {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .booking-form {
+    padding: 20px 16px;
+  }
+
   /* Mobile: hide inline buttons, show hamburger */
   .hero-cta { display: none !important; }
   .header-buttons { display: none !important; }
