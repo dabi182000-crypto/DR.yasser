@@ -17,7 +17,7 @@
   gsap.set(sceneA, { opacity: 1, y: 0 });
   gsap.set(sceneB, { opacity: 0, y: 60 });
   gsap.set(sceneC, { opacity: 0, x: 80 });
-  gsap.set('.orbit-icon', { opacity: 0, scale: 0.6 });
+  gsap.set('.orbit-label', { opacity: 0, scale: 0.6 });
 
   // Pinned timeline — total scroll distance ~ 3 viewports
   const tl = gsap.timeline({
@@ -34,16 +34,16 @@
   // A -> B
   tl.to(sceneA, { opacity: 0, y: -60, duration: 1 }, 0)
     .to(sceneB, { opacity: 1, y: 0, duration: 1 }, 0.4)
-    .to('.orbit-icon', { opacity: 1, scale: 1, duration: 1, stagger: 0.08 }, 0.6)
+    .to('.orbit-label', { opacity: 1, scale: 1, duration: 1, stagger: 0.08 }, 0.6)
     // hold B
     .to({}, { duration: 0.6 })
     // B -> C
     .to(sceneB, { opacity: 0, y: -60, duration: 1 }, '>')
-    .to('.orbit-icon', { opacity: 0, scale: 0.7, duration: 0.6 }, '<')
+    .to('.orbit-label', { opacity: 0, scale: 0.7, duration: 0.6 }, '<')
     .to(sceneC, { opacity: 1, x: 0, duration: 1 }, '<+0.2');
 
   // Floating loop for orbit icons (independent of scroll)
-  gsap.utils.toArray('.orbit-icon').forEach((el, i) => {
+  gsap.utils.toArray('.orbit-label').forEach((el, i) => {
     gsap.to(el, {
       y: '+=12',
       rotation: i % 2 === 0 ? 4 : -4,

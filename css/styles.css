@@ -491,25 +491,33 @@ html[dir="rtl"] .contact-links {
   z-index: 3;
   pointer-events: none;
 }
-.orbit-icon {
+.orbit-label {
   position: absolute;
-  width: 96px;
-  height: auto;
+  min-width: 100px;
+  max-width: 140px;
+  padding: 12px 16px;
   background: #fff;
   border-radius: 14px;
-  padding: 6px;
+  border: 2px solid var(--gold);
   box-shadow: 0 14px 30px -12px rgba(31, 41, 55, .25);
   opacity: 0;
   will-change: transform, opacity;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: center;
+  line-height: 1.3;
+  white-space: normal;
+  word-wrap: break-word;
 }
-.orbit-icon.i1 { top: 6%;  left: 4%; }
-.orbit-icon.i2 { top: 2%;  right: 8%; }
-.orbit-icon.i3 { top: 30%; left: -2%; }
-.orbit-icon.i4 { top: 26%; right: -2%; }
-.orbit-icon.i5 { bottom: 28%; left: 2%; }
-.orbit-icon.i6 { bottom: 22%; right: 0%; }
-.orbit-icon.i7 { bottom: 2%; left: 14%; }
-.orbit-icon.i8 { bottom: 0%; right: 16%; }
+.orbit-label.i1 { top: 6%;  left: 4%; }
+.orbit-label.i2 { top: 2%;  right: 8%; }
+.orbit-label.i3 { top: 30%; left: -2%; }
+.orbit-label.i4 { top: 26%; right: -2%; }
+.orbit-label.i5 { bottom: 28%; left: 2%; }
+.orbit-label.i6 { bottom: 22%; right: 0%; }
+.orbit-label.i7 { bottom: 2%; left: 14%; }
+.orbit-label.i8 { bottom: 0%; right: 16%; }
 
 /* Booking card on Scene C */
 .booking-card {
@@ -724,7 +732,7 @@ html[dir="rtl"] .scene-c .scene-img {
   .scene .scene-text { order: 2; }
   .scene .scene-img { order: 1; }
   .scene-img > img { max-height: 42vh; }
-  .orbit-icon { width: 64px; }
+  .orbit-label { max-width: 110px; font-size: 0.8rem; padding: 10px 12px; }
   .booking-card { margin: 0 auto; }
   .section { padding: 70px 0; }
 
