@@ -751,7 +751,8 @@ html[dir="rtl"] .scene-c .scene-img {
   .scene-a .scene-img::before { display: none; }
 
   /* Fade the image pixels directly — no color-mismatch possible */
-  .scene-a .scene-img > img {
+  .scene-a .scene-img > img,
+  .scene-b .scene-img > img {
     -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
     mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
   }
