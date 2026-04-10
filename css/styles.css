@@ -1,0 +1,823 @@
+/* ===========================================================
+   Dr. Yasser Clinics — styles
+   Palette pulled from the logo (gold + leaf green + cream)
+   =========================================================== */
+
+:root {
+  --gold: #B8860B;
+  --gold-light: #D4A24A;
+  --gold-soft: #F1E2BD;
+  --green: #6FAE3F;
+  --green-dark: #4F8B27;
+  --cream: #FAF8F3;
+  --ink: #1F2937;
+  --ink-soft: #4B5563;
+  --line: #E7E2D6;
+  --shadow: 0 20px 60px -20px rgba(31, 41, 55, 0.25);
+  --radius: 18px;
+  --container: 1180px;
+  --header-h: 84px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+body {
+  font-family: 'Tajawal', 'Poppins', system-ui, -apple-system, Segoe UI, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body.lang-en { font-family: 'Poppins', 'Tajawal', system-ui, sans-serif; }
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3 { color: var(--ink); line-height: 1.2; margin: 0 0 .5em; font-weight: 800; }
+h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); }
+h3 { font-size: 1.15rem; }
+p  { margin: 0 0 1em; color: var(--ink-soft); }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-weight: 700;
+  color: var(--gold);
+  font-size: .82rem;
+  margin: 0 0 .6em;
+}
+.center { text-align: center; }
+
+/* ============ Buttons ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  padding: .85em 1.6em;
+  border-radius: 999px;
+  font-weight: 700;
+  border: 0;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+  white-space: nowrap;
+}
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #fff;
+  box-shadow: 0 12px 24px -12px rgba(184, 134, 11, .55);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -12px rgba(184, 134, 11, .7); }
+.btn-lg { padding: 1em 2em; font-size: 1.05rem; }
+
+/* ============ Header ============ */
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--header-h);
+  background: rgba(250, 248, 243, .85);
+  backdrop-filter: saturate(140%) blur(12px);
+  border-bottom: 1px solid var(--line);
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  gap: 0;
+}
+
+/* Left side: language toggle */
+.header-left {
+  position: absolute;
+  left: 24px;
+  display: flex;
+  align-items: center;
+}
+
+/* Logo: centered, slightly larger */
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logo img { height: 72px; }
+
+/* Right side: Book Now button */
+.header-right {
+  position: absolute;
+  right: 24px;
+  display: flex;
+  align-items: center;
+}
+
+/* Language toggle: gold outline, smaller */
+.lang-toggle {
+  background: transparent;
+  border: 2px solid var(--gold);
+  color: var(--gold);
+  padding: .4em .8em;
+  border-radius: 999px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  font-size: .85rem;
+  min-width: 52px;
+  text-align: center;
+}
+.lang-toggle:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+/* Right side wrapper */
+.header-right {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop: buttons shown inline */
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dropdown-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+/* Mobile panel: hidden on desktop */
+.mobile-menu {
+  display: none !important;
+}
+
+/* Hamburger: hidden on desktop */
+.hamburger-menu {
+  display: none !important;
+}
+
+.header-right .btn,
+.visit-clinic-btn {
+  padding: .65em 1.5em;
+  font-size: .9rem;
+  white-space: nowrap;
+}
+
+.visit-clinic-btn {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #fff;
+  box-shadow: 0 12px 24px -12px rgba(184, 134, 11, .55);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.visit-clinic-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -12px rgba(184, 134, 11, .7);
+}
+
+/* ============ Hamburger Menu ============ */
+.hamburger-menu {
+  display: none !important;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.hamburger-menu span {
+  width: 24px;
+  height: 2.5px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: all .3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.mobile-menu {
+  display: none !important;
+}
+
+.mobile-menu .dropdown-wrapper {
+  width: 100%;
+}
+
+.mobile-menu .dropdown-trigger {
+  width: 100%;
+  justify-content: center;
+}
+
+.mobile-menu .visit-clinic-btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* ============ Dropdown Menu ============ */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .4em;
+}
+
+.dropdown-trigger::after {
+  content: '▼';
+  font-size: .6em;
+  opacity: .7;
+  transition: transform .25s ease;
+}
+
+.dropdown-trigger.active::after {
+  transform: scaleY(-1);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 16px 40px -12px rgba(31, 41, 55, .25);
+  min-width: 320px;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all .2s ease;
+  overflow: hidden;
+}
+
+.dropdown-menu.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 6px;
+}
+
+.dropdown-item:last-of-type {
+  border-bottom: none;
+}
+
+.dropdown-item strong {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: .9rem;
+  display: block;
+}
+
+.dropdown-item span,
+.dropdown-item a {
+  color: var(--ink);
+  font-size: .95rem;
+  display: block;
+}
+
+.dropdown-item a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.dropdown-item a:hover {
+  color: var(--gold-light);
+}
+
+.hours-list,
+.contact-links {
+  display: grid;
+  gap: 4px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.contact-links span {
+  color: var(--ink-soft);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 12px 20px;
+  background: var(--gold-soft);
+  color: var(--gold);
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: .95rem;
+  transition: background .2s ease, color .2s ease;
+}
+
+.dropdown-link:hover {
+  background: var(--gold-light);
+  color: #fff;
+}
+
+/* RTL adjustments */
+html[dir="rtl"] .dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] .dropdown-item {
+  text-align: right;
+}
+
+html[dir="rtl"] .contact-links {
+  flex-direction: row-reverse;
+}
+
+/* Alternative dropdown styling for scene C */
+.dropdown-menu-alt {
+  min-width: 340px;
+}
+
+/* ============ Hero ============ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding-top: var(--header-h);
+  background:
+    radial-gradient(1100px 700px at 80% -10%, rgba(212, 162, 74, .18), transparent 60%),
+    radial-gradient(900px 600px at 0% 110%, rgba(111, 174, 63, .15), transparent 60%),
+    var(--cream);
+  overflow: hidden;
+}
+
+.hero-stage {
+  position: relative;
+  height: calc(100vh - var(--header-h));
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.scene-a { opacity: 1; }
+
+.scene .scene-text { padding: 24px 8px; }
+.scene .display {
+  font-size: clamp(2.4rem, 5.8vw, 4.5rem);
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: .2em;
+  letter-spacing: -.01em;
+}
+.scene .lead {
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  color: var(--green-dark);
+  font-weight: 600;
+  margin-bottom: .4em;
+}
+.scene .tag {
+  display: inline-block;
+  background: var(--gold-soft);
+  color: var(--gold);
+  padding: .4em 1em;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .95rem;
+}
+.badges {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* Desktop: "Book Now" button in HEADER (not in hero) */
+.hero-cta {
+  display: none;        /* hide hero CTA on desktop */
+}
+
+.header-right .btn {
+  display: block;       /* show header button on desktop */
+}
+.badge {
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  padding: .35em .9em;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: .85rem;
+  letter-spacing: .08em;
+}
+
+.scene-img {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scene-img > img {
+  max-height: 78vh;
+  width: auto;
+  filter: drop-shadow(0 30px 40px rgba(31, 41, 55, .25));
+  position: relative;
+  z-index: 2;
+}
+/* radial backdrop behind doctor */
+.scene-img::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212, 162, 74, .35), rgba(212, 162, 74, 0) 65%);
+  z-index: 1;
+}
+
+/* Scene B orbit icons */
+.orbit {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.orbit-icon {
+  position: absolute;
+  width: 96px;
+  height: auto;
+  background: #fff;
+  border-radius: 14px;
+  padding: 6px;
+  box-shadow: 0 14px 30px -12px rgba(31, 41, 55, .25);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+.orbit-icon.i1 { top: 6%;  left: 4%; }
+.orbit-icon.i2 { top: 2%;  right: 8%; }
+.orbit-icon.i3 { top: 30%; left: -2%; }
+.orbit-icon.i4 { top: 26%; right: -2%; }
+.orbit-icon.i5 { bottom: 28%; left: 2%; }
+.orbit-icon.i6 { bottom: 22%; right: 0%; }
+.orbit-icon.i7 { bottom: 2%; left: 14%; }
+.orbit-icon.i8 { bottom: 0%; right: 16%; }
+
+/* Booking card on Scene C */
+.booking-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  box-shadow: var(--shadow);
+  max-width: 420px;
+}
+.booking-card h2 { font-size: 1.8rem; margin-bottom: .3em; }
+
+.scroll-hint {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--gold);
+  font-size: .8rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: .85;
+}
+.scroll-hint .arrow {
+  width: 2px;
+  height: 28px;
+  background: var(--gold);
+  position: relative;
+  animation: scrollPulse 1.6s ease-in-out infinite;
+}
+.scroll-hint .arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: -4px;
+  width: 10px; height: 10px;
+  border-right: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  transform: rotate(45deg);
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: .35; transform: translateY(0); }
+  50%      { opacity: 1;   transform: translateY(6px); }
+}
+
+/* ============ Sections ============ */
+.section { padding: 110px 0; }
+.section-alt { background: #fff; }
+
+/* ============ About ============ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.about-photo img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.creds {
+  list-style: none;
+  padding: 0;
+  margin: 22px 0 0;
+  display: grid;
+  gap: 12px;
+}
+.creds li {
+  position: relative;
+  padding-inline-start: 28px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.creds li::before {
+  content: '';
+  position: absolute;
+  inset-inline-start: 0;
+  top: .55em;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(184,134,11,.18);
+}
+
+/* ============ Services ============ */
+.services h2 { margin-bottom: 50px; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.service-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 18px;
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: var(--gold-light);
+}
+.service-card img {
+  width: 110px;
+  margin: 0 auto 8px;
+}
+.service-card h3 { margin: 0; }
+.note { margin-top: 40px; color: var(--ink-soft); }
+
+/* ============ Clinic ============ */
+.clinic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.clinic-photo img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ============ Contact ============ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+.info-list { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 14px; }
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.info-list strong { color: var(--gold); }
+
+.booking-form {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 32px;
+  display: grid;
+  gap: 14px;
+}
+.booking-form label { display: grid; gap: 6px; font-weight: 600; font-size: .92rem; }
+.booking-form input,
+.booking-form textarea {
+  font: inherit;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--ink);
+}
+.booking-form input:focus,
+.booking-form textarea:focus {
+  outline: 2px solid var(--gold-light);
+  border-color: var(--gold-light);
+}
+.booking-form .btn { margin-top: 6px; }
+
+/* ============ Footer ============ */
+.site-footer {
+  background: var(--ink);
+  color: #cbd5e1;
+  padding: 36px 0;
+  text-align: center;
+}
+.footer-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.footer-logo { height: 60px; filter: brightness(1.05); }
+.site-footer p { color: #cbd5e1; margin: 0; }
+
+/* ============ RTL / LTR tweaks ============ */
+html[dir="rtl"] .scene-a { direction: rtl; }
+html[dir="ltr"] .scene-a { direction: ltr; }
+html[dir="ltr"] .main-nav { font-family: 'Poppins', sans-serif; }
+
+/* Scene C in Arabic: doctor image should be on the LEFT, booking card on the RIGHT.
+   RTL grids render first column on the right, so we flip direction to LTR on the
+   grid itself and restore RTL only for the text inside the card. */
+html[dir="rtl"] .scene-c {
+  direction: ltr;
+}
+html[dir="rtl"] .scene-c .scene-text {
+  direction: rtl;
+}
+html[dir="rtl"] .scene-c .scene-img {
+  direction: rtl;
+}
+
+/* Desktop: hide mobile doctor image */
+.doc-mobile { display: none; }
+.doc-desktop { display: block; }
+
+/* ============ Responsive ============ */
+@media (max-width: 960px) {
+  .main-nav { display: none; }
+  .about-grid, .clinic-grid, .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .scene { grid-template-columns: 1fr; gap: 16px; text-align: center; }
+  .scene .scene-text { order: 2; }
+  .scene .scene-img { order: 1; }
+  .scene-img > img { max-height: 42vh; }
+  .orbit-icon { width: 64px; }
+  .booking-card { margin: 0 auto; }
+  .section { padding: 70px 0; }
+
+  /* Mobile: hide inline buttons, show hamburger */
+  .hero-cta { display: none !important; }
+  .header-buttons { display: none !important; }
+  .hamburger-menu { display: flex !important; }
+
+  /* Mobile panel */
+  .mobile-menu { display: none !important; }
+  .mobile-menu.active {
+    display: flex !important;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 16px 40px -12px rgba(31, 41, 55, .25);
+    padding: 16px;
+    min-width: 260px;
+    z-index: 1000;
+  }
+  .mobile-menu .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .mobile-menu .dropdown-wrapper {
+    width: 100%;
+  }
+
+  /* ---- Scene C mobile: pointing-down doctor + card flush under fingers ---- */
+
+  /* Switch images */
+  .scene-c .doc-desktop { display: none; }
+  .scene-c .doc-mobile  { display: block; }
+
+  /* Stack as a single column: doctor on top, card immediately below */
+  .scene-c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;                /* zero gap — card seats right under pointing fingers */
+  }
+
+  /* Reset the generic scene order rules for scene-c */
+  .scene-c .scene-img  { order: 1; width: 100%; }
+  .scene-c .scene-text { order: 2; width: 100%; }
+
+  /* Doctor: centred, full body visible, image sits above the card */
+  .scene-c .scene-img {
+    display: flex;
+    justify-content: center;
+    overflow: visible;
+    max-height: none;
+    position: relative;
+    z-index: 0;
+  }
+  .scene-c .doc-mobile {
+    width: 70%;
+    max-height: none;
+    filter: drop-shadow(0 8px 20px rgba(31,41,55,.20));
+    display: block;
+  }
+
+  /* Card: slides UP over the feet with a large negative margin-top */
+  .scene-c .scene-text {
+    position: relative;
+    z-index: 2;                  /* card paints above the doctor image */
+    margin-top: -90px;           /* overlap the feet area */
+  }
+  .scene-c .booking-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius);
+    border-top: 3px solid var(--gold-light);
+    margin: 0;
+    padding: 24px 20px;
+    box-shadow: 0 -4px 24px rgba(31,41,55,.12);  /* shadow upward to "lift" over image */
+  }
+}
+
+@media (max-width: 540px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .header-actions .btn { display: none; }
+  .logo img { height: 46px; }
+}
+
+/* ============ Reduced motion ============ */
+@media (prefers-reduced-motion: reduce) {
+  .scene { position: relative; opacity: 1 !important; transform: none !important; }
+  .hero-stage { height: auto; display: grid; gap: 80px; padding: 40px 24px; }
+  .scroll-hint { display: none; }
+}
