@@ -746,8 +746,25 @@ html[dir="rtl"] .scene-c .scene-img {
   .scene .scene-text { order: 2; }
   .scene .scene-img { order: 1; }
   .scene-img > img { max-height: 42vh; }
-  .orbit-label { max-width: 110px; font-size: 0.8rem; padding: 10px 12px; }
   .booking-card { margin: 0 auto; }
+
+  /* On mobile: orbit becomes a flowing flex-wrap row of chips */
+  .orbit {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 8px 0;
+  }
+  .orbit-label {
+    position: static;
+    min-width: unset;
+    max-width: unset;
+    font-size: 0.78rem;
+    padding: 8px 12px;
+    animation: floatLabel 3s ease-in-out infinite alternate;
+  }
   .section { padding: 70px 0; }
 
   /* Mobile: hide inline buttons, show hamburger */
