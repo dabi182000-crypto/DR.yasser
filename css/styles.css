@@ -472,6 +472,11 @@ html[dir="rtl"] .contact-links {
   position: relative;
   z-index: 2;
 }
+.scene-a .scene-img > img,
+.scene-b .scene-img > img {
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
 /* radial backdrop behind doctor */
 .scene-img::before {
   content: '';
