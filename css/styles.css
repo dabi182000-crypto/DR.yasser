@@ -842,7 +842,7 @@ html[dir="rtl"] .scene-c .scene-img {
     z-index: 0;
   }
   .scene-c .doc-mobile {
-    width: 70%;
+    width: 88%;
     max-height: none;
     filter: drop-shadow(0 8px 20px rgba(31,41,55,.20));
     display: block;
