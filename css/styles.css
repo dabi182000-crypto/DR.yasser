@@ -283,7 +283,6 @@ p  { margin: 0 0 1em; color: var(--ink-soft); }
   opacity: 0;
   transform: translateY(-8px);
   transition: all .2s ease;
-  overflow: hidden;
 }
 
 .dropdown-menu.active {
@@ -749,6 +748,7 @@ html[dir="rtl"] .scene-c .scene-img {
   .booking-card { margin: 0 auto; }
 
   /* On mobile: scenes stack vertically (GSAP handles opacity/transform) */
+  .hero { overflow: visible; }
   .hero-stage {
     height: auto;
   }
