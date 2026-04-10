@@ -499,14 +499,14 @@ html[dir="rtl"] .contact-links {
   position: absolute;
   min-width: 100px;
   max-width: 140px;
-  padding: 10px 14px;
+  padding: 12px 16px;
   background: #fff;
   border-radius: 14px;
   border: 2px solid var(--gold);
   box-shadow: 0 14px 30px -12px rgba(31, 41, 55, .25);
   opacity: 1;           /* visible by default; GSAP hides & reveals on desktop */
   will-change: transform, opacity;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--ink);
   text-align: center;
@@ -514,16 +514,6 @@ html[dir="rtl"] .contact-links {
   white-space: normal;
   word-wrap: break-word;
   animation: floatLabel 3s ease-in-out infinite alternate;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-.orbit-label img {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-  display: block;
 }
 /* stagger the float so they don't all move together */
 .orbit-label.i2 { animation-delay: .4s; }
@@ -531,6 +521,8 @@ html[dir="rtl"] .contact-links {
 .orbit-label.i4 { animation-delay: 1.2s; }
 .orbit-label.i5 { animation-delay: .6s; }
 .orbit-label.i6 { animation-delay: 1s; }
+.orbit-label.i7 { animation-delay: .2s; }
+.orbit-label.i8 { animation-delay: 1.4s; }
 
 @keyframes floatLabel {
   from { transform: translateY(0); }
@@ -538,10 +530,12 @@ html[dir="rtl"] .contact-links {
 }
 .orbit-label.i1 { top: 6%;  left: 4%; }
 .orbit-label.i2 { top: 2%;  right: 8%; }
-.orbit-label.i3 { top: 32%; left: -2%; }
-.orbit-label.i4 { top: 28%; right: -2%; }
-.orbit-label.i5 { bottom: 18%; left: 2%; }
-.orbit-label.i6 { bottom: 14%; right: 0%; }
+.orbit-label.i3 { top: 30%; left: -2%; }
+.orbit-label.i4 { top: 26%; right: -2%; }
+.orbit-label.i5 { bottom: 28%; left: 2%; }
+.orbit-label.i6 { bottom: 22%; right: 0%; }
+.orbit-label.i7 { bottom: 2%; left: 14%; }
+.orbit-label.i8 { bottom: 0%; right: 16%; }
 
 /* Booking card on Scene C */
 .booking-card {
@@ -800,22 +794,20 @@ html[dir="rtl"] .scene-c .scene-img {
   }
   /* Smaller labels on mobile, still floating around doctor */
   .orbit-label {
-    min-width: 76px;
-    max-width: 100px;
-    font-size: 0.65rem;
-    padding: 6px 8px;
-  }
-  .orbit-label img {
-    width: 38px;
-    height: 38px;
+    min-width: 80px;
+    max-width: 110px;
+    font-size: 0.7rem;
+    padding: 7px 10px;
   }
   /* Tighten positions so labels don't overflow narrow screens */
   .orbit-label.i1 { top: 4%;   left: 2%; }
   .orbit-label.i2 { top: 0%;   right: 2%; }
-  .orbit-label.i3 { top: 34%;  left: -1%; }
-  .orbit-label.i4 { top: 30%;  right: -1%; }
-  .orbit-label.i5 { bottom: 22%; left: 1%; }
-  .orbit-label.i6 { bottom: 16%; right: 0%; }
+  .orbit-label.i3 { top: 32%;  left: -1%; }
+  .orbit-label.i4 { top: 28%;  right: -1%; }
+  .orbit-label.i5 { bottom: 26%; left: 1%; }
+  .orbit-label.i6 { bottom: 20%; right: 0%; }
+  .orbit-label.i7 { bottom: 2%;  left: 10%; }
+  .orbit-label.i8 { bottom: 0%;  right: 10%; }
   .section { padding: 70px 0; }
 
   /* Contact section: stack label + value vertically on mobile */
