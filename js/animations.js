@@ -13,6 +13,11 @@
   const sceneC = document.querySelector('.scene-c');
   if (!hero || !sceneA || !sceneB || !sceneC) return;
 
+  // Disable CSS float animation — GSAP handles it from here
+  document.querySelectorAll('.orbit-label').forEach(el => {
+    el.style.animation = 'none';
+  });
+
   // Initial state
   gsap.set(sceneA, { opacity: 1, y: 0 });
   gsap.set(sceneB, { opacity: 0, y: 60 });
