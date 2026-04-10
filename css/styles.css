@@ -747,16 +747,20 @@ html[dir="rtl"] .scene-c .scene-img {
   .scene-img > img { max-height: 42vh; }
   .booking-card { margin: 0 auto; }
 
-  /* Fade out the bottom crop on Scene A & B doctor images */
-  .scene-a .scene-img::after,
-  .scene-b .scene-img::after {
+  /* Fade out the bottom crop on Scene A doctor image only */
+  .scene-a .scene-img::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 80px;
-    background: linear-gradient(to bottom, transparent, var(--cream));
+    height: 120px;
+    background: linear-gradient(
+      to bottom,
+      rgba(250, 248, 243, 0) 0%,
+      rgba(250, 248, 243, 0.6) 40%,
+      rgba(250, 248, 243, 1) 100%
+    );
     z-index: 4;
     pointer-events: none;
   }
